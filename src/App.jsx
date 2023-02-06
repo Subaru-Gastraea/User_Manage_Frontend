@@ -1,8 +1,12 @@
-import React, {useState} from "react";
-import {useEffect} from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import Login from "./components/Login";
+import Header from "./components/Header";
+import { UserContext } from "./context/UserContext";
 
 const App = () => {
   const [message, setMessage] = useState("");
+  const [token] = useContext(UserContext);
 
   const getWelMsg = async () => {
     const requestOp = {
@@ -22,10 +26,21 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <h1>User Manage Website</h1>
-      <p>{message}</p>
-    </div>
+    <>
+      <Header title={message} />
+      <div className="columns">
+        <div className="column"></div>
+        <div className="column m-5 is-two-thirds">
+          {!token ? (
+            <div className="columns">
+              <Login />
+            </div>
+          ) : (
+            <p>Table</p>
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 
