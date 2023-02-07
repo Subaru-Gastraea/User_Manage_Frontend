@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import Login from "./components/Login";
 import Header from "./components/Header";
+import Table from "./components/Table";
 import { UserContext } from "./context/UserContext";
 
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
               <Login />
             </div>
           ) : (
-            <p>Table</p>
+            <Table />
           )}
         </div>
       </div>
