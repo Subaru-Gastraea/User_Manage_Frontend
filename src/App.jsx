@@ -28,8 +28,7 @@ const App = () => {
   return (
     <>
       <Header title={message} />
-      <div className="columns">
-        <div className="column"></div>
+      <div className="columns is-centered">
         <div className="column m-5 is-two-thirds">
           {!token ? (
             <div className="columns">
