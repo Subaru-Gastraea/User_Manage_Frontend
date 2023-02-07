@@ -41,7 +41,7 @@ const Login = () => {
                     <label className="label">User name</label>
                     <div className="control">
                         <input
-                            type="uname"
+                            type="text"
                             placeholder="Enter user name"
                             value={uname}
                             onChange={(e) => setUname(e.target.value)}
